@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/materialize.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>
+        <%= TITLE %>
+    </title>
+</head>
+
+
+
+<body>
+    <%- include("./partials/nav.ejs") %>
+        <%- body %>
+            <script type="text/javascript" src="/js/materialize.js"></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    var elems = document.querySelectorAll('.dropdown-trigger');
+                    const options = {
+                        constrainWidth: false,
+                        coverTrigger: false,
+                        hover: true,
+
+                    }
+                    var instances = M.Dropdown.init(elems, options);
+                });
+            </script>
+</body>
+
+</html>
