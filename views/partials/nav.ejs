@@ -1,24 +1,19 @@
 <nav>
     <div class="nav-wrapper">
 
-        <ul id="nav-mobile" class="left ">
+        <ul id="nav-mobile" class="right ">
             <li>
-                <a href="/users">
+                <a href="/<%= home_link %>">
                     Home
                 </a>
+
+                <li>
+                    <a href="/<%= other_link %>">
+                        <%= other_link_name %>
+                    </a>
+                </li>
             </li>
-
-
-            <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Mongoose Associations</a>
-
-            <!-- Dropdown Structure -->
-            <ul id='dropdown1' class='dropdown-content'>
-                <li><a href="/users">All Users</a></li>
-                <li><a href="/users/new">New User</a></li>
-                <li><a href="/foods">All Foods</a></li>
-                <li><a href="/foods/new">New Food</a></li>
-
-            </ul>
+        </ul>
 
     </div>
 </nav>

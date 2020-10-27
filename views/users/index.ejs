@@ -1,0 +1,25 @@
+<div class="container">
+
+    <ul class="users collection with-header">
+        <li class="collection-header">
+            <h4> Users <a class="btn-floating btn-large waves-effect waves-light teal" onclick="window.location='/users/new';"><i class="material-icons">add</i></a>
+            </h4>
+
+        </li>
+        <% users.forEach((element, index) => { %>
+
+            <li class="collection-item">
+                <div>
+                    <h5>
+                        <a href="/users/<%=element._id %>">
+                            <%= element.name %>
+                                <form action="/users/<%= element._id %>?_method=DELETE" method="POST">
+                                    <button class="btn btn-flat secondary-content"><i class="material-icons">delete</i></button>
+                                </form>
+                        </a>
+                    </h5>
+                </div>
+            </li>
+            <% }) %>
+    </ul>
+</div>
