@@ -1,0 +1,25 @@
+<div class="container">
+
+    <ul class="albums collection with-header">
+        <li class="collection-header">
+            <h4> Albums <a class="btn-floating btn-large waves-effect waves-light teal" onclick="window.location='/albums/new';"><i class="material-icons">add</i></a>
+            </h4>
+
+        </li>
+        <% albums.forEach((element, index) => { %>
+
+            <li class="collection-item">
+                <div>
+                    <h5>
+                        <a href="/albums/<%=element._id %>">
+                            <%= element.name %>
+                                <form action="/albums/<%= element._id %>?_method=DELETE" method="POST">
+                                    <button class="btn btn-flat secondary-content"><i class="material-icons">delete</i></button>
+                                </form>
+                        </a>
+                    </h5>
+                </div>
+            </li>
+            <% }) %>
+    </ul>
+</div>

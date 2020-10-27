@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="card-panel">
+        <div>
+            <h1>Edit
+                <%= foundAlbum.name %>'s Song</h1>
+            <h4 class="center-align">Edit Song </h4>
+
+        </div>
+    </div>
+    <div class="row">
+        <form class="col s12" action="/albums/<%= foundAlbum.id %>/songs/<%= foundSong.id %>?_method=PUT" method="POST">
+
+            <div class="row">
+                <div class="input-field col s12">
+
+                    <input id="name" type="text" name="songName" value="<%= foundSong.songName %>" required>
+                    <em>Song Name</em>
+                </div>
+
+            </div>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+
+            </button>
+        </form>
+    </div>

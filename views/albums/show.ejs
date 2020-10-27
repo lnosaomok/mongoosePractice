@@ -1,33 +1,33 @@
 <div class="container">
 
     <h3 class="center-align grey-text darken-4">
-        <%= user.name%>'s Detail Page <i class="medium material-icons">account_circle</i>
+        <%= album.name%>'s Song List <i class="medium material-icons">audiotrack</i>
     </h3>
 
 
     <div class="row">
         <div class="col m7 push-m5">
-            <ul class="tweets collection with-header">
+            <ul class="songs collection with-header">
                 <li class="collection-header">
-                    <h4> Tweets
+                    <h4> Songs
                     </h4>
 
                 </li>
-                <% if (user.tweets) { %>
-                    <% user.tweets.forEach((element, index) => { %>
+                <% if (album.songs) { %>
+                    <% album.songs.forEach((element, index) => { %>
 
                         <li class="collection-item">
                             <div>
                                 <h5>
                                     <a href="#">
-                                        <%= element.tweetText %>
-                                            <form action="/users/<%= user._id %>/tweets/<%= element._id %>?_method=DELETE" method="POST">
+                                        <%= element.songName %>
+                                            <form action="/albums/<%= album._id %>/songs/<%= element._id %>?_method=DELETE" method="POST">
                                                 <button class="btn btn-flat secondary-content"><i
                                             class="small material-icons">delete</i></button>
                                             </form>
                                     </a>
                                 </h5>
-                                <a href="/users/<%= user._id %>/tweets/<%= element._id %>/edit" class="secondary-content"><i
+                                <a href="/albums/<%= album._id %>/songs/<%= element._id %>/edit" class="secondary-content"><i
                                 class="small material-icons">edit</i></a>
                             </div>
                         </li>
@@ -41,15 +41,15 @@
         </div>
         <br />
         <div class="col m5 pull-m7">
-            <form class="col s12" action="/users/<%= user.id %>/tweets" method="POST">
-                <h5 class="text-center">Create New Tweet <button class="btn waves-effect waves-light" type="submit" name="action">
+            <form class="col s12" action="/albums/<%= album.id %>/songs" method="POST">
+                <h5 class="text-center">Create New Song <button class="btn waves-effect waves-light" type="submit" name="action">
                         <i class="medium material-icons">send</i>
                     </button></h5>
                 <div class="row">
                     <div class="input-field col s12">
 
-                        <input id="name" type="text" name="tweetText" required>
-                        <em>Tweet Text</em>
+                        <input id="name" type="text" name="songName" required>
+                        <em>Song Name</em>
                     </div>
 
                 </div>

@@ -21,6 +21,7 @@ app.use(express.static("public"));
 app.use(methodOverride("_method"));
 
 app.use("/users", require("./controllers/usersController"));
+app.use("/albums", require("./controllers/albumsController"));
 
 app.listen(PORT, () => {
     console.log(`server is running on port ${PORT}`);
